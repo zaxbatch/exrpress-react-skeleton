@@ -26,7 +26,7 @@ class App extends Component {
   }
     // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
   callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
+    const response = await fetch('/backend');
     const body = await response.json();
 
     if (response.status !== 200) {
@@ -37,8 +37,9 @@ class App extends Component {
 
   render() {
     return (
-      <div classname='container'>
+      <div className='container'>
         <Menu />
+        <p>{this.state.data}</p>
         <Router>
               <div>
              <Route exact path="/" component={Home} />
